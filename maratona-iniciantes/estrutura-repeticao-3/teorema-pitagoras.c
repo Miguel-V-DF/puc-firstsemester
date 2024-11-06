@@ -29,13 +29,11 @@ int main()
             if(gcd == 1) {
                 printf("tripla pitagorica primitiva\n");
             }
-            else
-            {
+            else {
                 printf("tripla pitagorica\n");
             }
         }
-        else
-        {
+        else {
             printf("tripla\n");
         }
     }
