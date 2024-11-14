@@ -7,7 +7,10 @@ int main()
     scanf("%d", &n);
     int h[n];
     scanf("%d", &h[0]);
-    if(n == 1) {
+    if(n == 0 || n == 1 || n == 2) {
+        valid = 0;
+    }
+    if(n == 2 && h[0] == h[1]) {
         valid = 0;
     }
     for(int i = 1; i < n; i++) {
@@ -23,11 +26,11 @@ int main()
             }
         }
         else {
-            if((value == 'D') && ((i % 2 == 0 && h[i] < h[i-1]) || (i % 2 != 0 && h[i] > h[i-1]))) {
+            if((value == 'D') && ((i % 2 == 0 && h[i] <= h[i-1]) || (i % 2 != 0 && h[i] >= h[i-1]))) {
                 valid = 0;
             }
             else {
-                if((value == 'U') && ((i % 2 == 0 && h[i] > h[i-1]) || (i % 2 != 0 && h[i] < h[i-1]))) {
+                if((value == 'U') && ((i % 2 == 0 && h[i] >= h[i-1]) || (i % 2 != 0 && h[i] <= h[i-1]))) {
                     valid = 0;
                 }
             }
