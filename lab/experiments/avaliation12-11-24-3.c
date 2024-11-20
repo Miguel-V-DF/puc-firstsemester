@@ -6,7 +6,7 @@ int main()
     int m, n, o;
     while(i<=10) {
         m=g++;
-        m=+l;
+        n=+l;
         o=++k;
         i++;
     }
