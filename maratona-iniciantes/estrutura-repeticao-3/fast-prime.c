@@ -9,35 +9,23 @@ int main()
 
     for(int i = 0; i < n; i ++)
     {
-        int notP = 0;
         scanf("%d", &x);
-        if(x == 2 || x == 3)
+        if(x == 2)
         {
             printf("Prime\n");
         }
         else
         {
-            if(x % 2 == 0)
-            {
-                printf("Not Prime\n");
+            int rad = sqrt(x);
+            int j = 2;
+            while(j <= rad && x % j != 0) {
+                j++;
             }
-            else
-            {
-                for(int j = 3; j <= sqrt(x); j++)
-                {
-                    if(x % j == 0)
-                    {
-                        notP++;
-                    }
-                }
-                if(notP > 0)
-                {
-                    printf("Not Prime\n");
-                }
-                else
-                {
-                    printf("Prime\n");
-                }
+            if(j > rad) {
+                printf("Prime\n");
+            }
+            else {
+                printf("Not Prime\n");
             }
         }
     }
