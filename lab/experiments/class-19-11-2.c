@@ -2,30 +2,17 @@
 
 int main()
 {
-    char palavra[100];
-    int length = 0, i = 0, valid = 1;
-
+    char palavra[1001];
+    int length = 0, i = 0;
     scanf("%s", palavra);
-    
     while(palavra[i] != '\0') {
         length++;
         i++;
     }
-    printf("length: %d\n", length);
     int half = length / 2;
-    printf("half: %d\n", half);
-    for(int j = 0; j < half; j++) {
-        if(palavra[j] != palavra[length - j - 1]) {
-            valid = 0;
-        }
-    }
-    if(valid == 0) {
-        printf("The word is not a palindrome\n");
-    }
-    else {
-        printf("The word is a palindrome\n");
-    }
-
+    i = 0;
+    while((i < half) && (palavra[i] == palavra[length-1-i])) i++;
+    if(i == half) printf("The word is palindrome\n");
+    else printf("The word isn't palindrome\n");
     return 0;
-
 }
