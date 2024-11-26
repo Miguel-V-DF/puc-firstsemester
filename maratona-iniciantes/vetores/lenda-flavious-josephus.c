@@ -7,8 +7,11 @@ int main()
     for(int i = 0; i < nC; i++) {
         int n, k;
         scanf("%d %d", &n, &k);
-        int numberN[n] = {0};
-
+        int pos = 0;
+        for(int size = 2; size <= n; size++) {
+            pos = (pos + k) % size;
+        }
+        printf("Case %d: %d\n",i+1, pos+1);
     }
 
     return 0;
